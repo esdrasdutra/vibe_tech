@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ListaDeputadosController {
 
-    @RequestMapping(path = "/")    
+    @RequestMapping(path = "/deputados")    
     public String getTest() throws Exception{
         var url = "https://dadosabertos.camara.leg.br/api/v2/deputados?itens=5&ordem=ASC&ordenarPor=nome";
 
@@ -20,11 +20,12 @@ public class ListaDeputadosController {
             .header("Content-Type","application/json")
             .GET()
         .build();
-
+        
         HttpClient httpClient = HttpClient.newHttpClient();
         var response = httpClient.send(request,
         HttpResponse.BodyHandlers.ofString());
-
+                         
         return response.body();
+        
     }  
 }

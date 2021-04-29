@@ -16,6 +16,7 @@ public class Deputado {
     private String  ordenarPor;
     private String  views;    
     
+    @
     public Deputado(Integer id, String nome, Integer idLegislatura, String siglaUf, String siglaPartido,
             String siglaSexo, Integer pagina, Integer itens, String dataInicio, String dataFim, String ordem,
             String ordenarPor, String views) {
@@ -36,80 +37,53 @@ public class Deputado {
     public String getViews() {
         return views;
     }
-    public void setViews(String views) {
-        this.views = views;
-    }
+    
     public String getOrdenarPor() {
         return ordenarPor;
     }
+
     public Integer getId() {
         return id;
     }
-    public void setId(Integer id) {
-        this.id = id;
-    }
+
     public String getNome() {
         return nome;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+   
     public Integer getIdLegislatura() {
         return idLegislatura;
     }
-    public void setIdLegislatura(Integer idLegislatura) {
-        this.idLegislatura = idLegislatura;
-    }
+    
     public String getSiglaUf() {
         return siglaUf;
     }
-    public void setSiglaUf(String siglaUf) {
-        this.siglaUf = siglaUf;
-    }
+    
     public String getSiglaPartido() {
         return siglaPartido;
     }
-    public void setSiglaPartido(String siglaPartido) {
-        this.siglaPartido = siglaPartido;
-    }
+ 
     public String getSiglaSexo() {
         return siglaSexo;
     }
-    public void setSiglaSexo(String siglaSexo) {
-        this.siglaSexo = siglaSexo;
-    }
+
     public Integer getPagina() {
         return pagina;
     }
-    public void setPagina(Integer pagina) {
-        this.pagina = pagina;
-    }
+
     public Integer getItens() {
         return itens;
     }
-    public void setItens(Integer itens) {
-        this.itens = itens;
-    }
+
     public String getDataInicio() {
         return dataInicio;
     }
-    public void setDataInicio(String dataInicio) {
-        this.dataInicio = dataInicio;
-    }
+
     public String getDataFim() {
         return dataFim;
     }
-    public void setDataFim(String dataFim) {
-        this.dataFim = dataFim;
-    }
+
     public String getOrdem() {
         return ordem;
-    }
-    public void setOrdem(String ordem) {
-        this.ordem = ordem;
-    }
-    public void setOrdenarPor(String ordenarPor) {
-        this.ordenarPor = ordenarPor;
     }
 
     @Override
@@ -121,9 +95,5 @@ public class Deputado {
 			", uf='" + siglaUf + '\'' +
             ", views='" + views + '\'' +
 			'}';
-	}
-
-    
-    
-
+	}  
 }
