@@ -1,22 +1,15 @@
-package com.vibetech.hm.controller;
+package com.vibetech.hm.controllers;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-import com.vibetech.hm.interfaces.DeputadoService;
-import com.vibetech.hm.model.Deputado;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ListaDeputadosController {
-
 
     @RequestMapping(path = "/")    
     public String getTest() throws Exception{
