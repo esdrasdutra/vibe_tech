@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class HelloController{
+public class WelcomePageController{
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String hello() {
-        return ("Olá, Fique a vontade.\n");
+        return ("Olá, Tudo bem? \n");
     }
 }

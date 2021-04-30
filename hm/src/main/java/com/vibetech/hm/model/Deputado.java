@@ -1,99 +1,71 @@
 package com.vibetech.hm.model;
 
-public class Deputado {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-    private Integer id;
-    private String  nome;
-    private Integer idLegislatura;
-    private String  siglaUf;	
-    private String  siglaPartido;
-    private String  siglaSexo;
-    private Integer pagina;	
-    private Integer itens;	
-    private String  dataInicio;	
-    private String  dataFim;	
-    private String  ordem;
-    private String  ordenarPor;
-    private String  views;    
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({ "dados", "links" })
+
+public class Deputado implements Serializable {
+
+    @JsonProperty("dados")
+    private IndividualDados dados;
     
-    @
-    public Deputado(Integer id, String nome, Integer idLegislatura, String siglaUf, String siglaPartido,
-            String siglaSexo, Integer pagina, Integer itens, String dataInicio, String dataFim, String ordem,
-            String ordenarPor, String views) {
-        this.id = id;
-        this.nome = nome;
-        this.idLegislatura = idLegislatura;
-        this.siglaUf = siglaUf;
-        this.siglaPartido = siglaPartido;
-        this.siglaSexo = siglaSexo;
-        this.pagina = pagina;
-        this.itens = itens;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
-        this.ordem = ordem;
-        this.ordenarPor = ordenarPor;
-        this.views = views;
-    }
-    public String getViews() {
-        return views;
-    }
-    
-    public String getOrdenarPor() {
-        return ordenarPor;
+    @JsonProperty("links")
+    private List<Link> links = new ArrayList<Link>();
+    private final static long serialVersionUID = -2257509809426723682L;
+
+    /**
+     * No args constructor for use in serialization
+     *
+     */
+    public Deputado() {
     }
 
-    public Integer getId() {
-        return id;
+    /**
+     *
+     * @param dados
+     * @param links
+     */
+    public Deputado(IndividualDados dados, List<Link> links) {
+        super();
+        this.dados = dados;
+        this.links = links;
     }
 
-    public String getNome() {
-        return nome;
-    }
-   
-    public Integer getIdLegislatura() {
-        return idLegislatura;
-    }
-    
-    public String getSiglaUf() {
-        return siglaUf;
-    }
-    
-    public String getSiglaPartido() {
-        return siglaPartido;
-    }
- 
-    public String getSiglaSexo() {
-        return siglaSexo;
+    @JsonProperty("dados")
+    public IndividualDados getDados() {
+        return dados;
     }
 
-    public Integer getPagina() {
-        return pagina;
-    }
-
-    public Integer getItens() {
-        return itens;
-    }
-
-    public String getDataInicio() {
-        return dataInicio;
-    }
-
-    public String getDataFim() {
-        return dataFim;
-    }
-
-    public String getOrdem() {
-        return ordem;
+    @JsonProperty("links")
+    public List<Link> getLinks() {
+        return links;
     }
 
     @Override
-	public String toString() {
-		return "Deputado{" +
-			"id=" + id +
-			", nome='" + nome + '\'' +
-			", partido='" + siglaPartido + '\'' +
-			", uf='" + siglaUf + '\'' +
-            ", views='" + views + '\'' +
-			'}';
-	}  
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Deputado.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+                .append('[');
+        sb.append("dados");
+        sb.append('=');
+        sb.append(((this.dados == null) ? "<null>" : this.dados));
+        sb.append(',');
+        sb.append("links");
+        sb.append('=');
+        sb.append(((this.links == null) ? "<null>" : this.links));
+        sb.append(',');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
+    }
+
 }

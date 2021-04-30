@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const API = "/deputados";
+const API = "/{id}";
 
 class ListarDeputados extends Component {
   constructor(props) {

@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import { FileSearchOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
-const API = "/hello";
+// const API = "/";
 
 class Main extends Component {
   constructor(props) {
@@ -11,19 +11,19 @@ class Main extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
+/*   componentDidMount() {
     fetch(API)
       .then(res => res.text()
         .then(greet => this.setState({ greet })
         )
       );
-  }
+  } */
 
   render() {
 
     return (
       <div>
-        <h1> {this.state.greet} </h1>
+        <h1>Olá, Tudo bem?</h1>
         <p>AQUI VOCÊ PODE CONFERIR O QUE SEU DEPUTADO ANDA FAZENDO COM O DINHEIRO PÚBLICO</p>
 
         <Link to="/deputados" >
