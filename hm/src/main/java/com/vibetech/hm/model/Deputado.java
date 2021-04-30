@@ -7,13 +7,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "dados", "links" })
 
 public class Deputado implements Serializable {
 
     @JsonProperty("dados")
-    private IndividualDados dados;
+    private Dados dados;
     
     @JsonProperty("links")
     private List<Link> links = new ArrayList<Link>();
@@ -31,14 +33,14 @@ public class Deputado implements Serializable {
      * @param dados
      * @param links
      */
-    public Deputado(IndividualDados dados, List<Link> links) {
+    public Deputado(Dados dados, List<Link> links) {
         super();
         this.dados = dados;
         this.links = links;
     }
 
     @JsonProperty("dados")
-    public IndividualDados getDados() {
+    public Dados getDados() {
         return dados;
     }
 

@@ -70,8 +70,7 @@ public class IndividualDados implements Serializable {
     private final static long serialVersionUID = 3511063249922191858L;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public IndividualDados() {
-    }
+    public IndividualDados() {    }
 
     /**
      *

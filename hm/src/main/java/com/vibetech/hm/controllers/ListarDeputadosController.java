@@ -1,7 +1,9 @@
 package com.vibetech.hm.controllers;
 
 import com.vibetech.hm.interfaces.ListarDeputados;
+
 import com.vibetech.hm.model.Deputados;
+import com.vibetech.hm.model.DeputadosDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +17,12 @@ public class ListarDeputadosController {
     @Autowired
     private ListarDeputados listaDep;
 
-    @GetMapping("/deputado")
+    @GetMapping("/deputados")
     public ResponseEntity<Deputados> listaDeputados () {
 
         Deputados deputado = listaDep.listarDeputados();
+        
+        
         return deputado != null ? ResponseEntity.ok().body(deputado) : ResponseEntity.notFound().build(); 
     }
 

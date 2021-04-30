@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,32 +13,41 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({ "email", "id", "idLegislatura", "nome", "siglaPartido", "siglaUf", "uri", "uriPartido",
         "urlFoto" })
         
-public class ListaDados implements Serializable {
+public class Dados implements Serializable {
 
     @JsonProperty("email")
     private String email;
+
     @JsonProperty("id")
     private int id;
+
     @JsonProperty("idLegislatura")
     private int idLegislatura;
+
     @JsonProperty("nome")
     private String nome;
+
     @JsonProperty("siglaPartido")
     private String siglaPartido;
+
     @JsonProperty("siglaUf")
     private String siglaUf;
+
     @JsonProperty("uri")
     private String uri;
+
     @JsonProperty("uriPartido")
     private String uriPartido;
+
     @JsonProperty("urlFoto")
     private String urlFoto;
+    
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private final static long serialVersionUID = -8380280475753718883L;
 
 
-    public ListaDados() {
+    public Dados() {
     }
 
     /**
@@ -55,7 +62,7 @@ public class ListaDados implements Serializable {
      * @param email
      * @param uriPartido
      */
-    public ListaDados(String email, int id, int idLegislatura, String nome, String siglaPartido, String siglaUf, String uri,
+    public Dados(String email, int id, int idLegislatura, String nome, String siglaPartido, String siglaUf, String uri,
             String uriPartido, String urlFoto) {
         super();
         this.email = email;
@@ -159,20 +166,10 @@ public class ListaDados implements Serializable {
         this.urlFoto = urlFoto;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(ListaDados.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
+        sb.append(Dados.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this)))
                 .append('[');
         sb.append("email");
         sb.append('=');
@@ -209,10 +206,6 @@ public class ListaDados implements Serializable {
         sb.append("urlFoto");
         sb.append('=');
         sb.append(((this.urlFoto == null) ? "<null>" : this.urlFoto));
-        sb.append(',');
-        sb.append("additionalProperties");
-        sb.append('=');
-        sb.append(((this.additionalProperties == null) ? "<null>" : this.additionalProperties));
         sb.append(',');
         if (sb.charAt((sb.length() - 1)) == ',') {
             sb.setCharAt((sb.length() - 1), ']');
