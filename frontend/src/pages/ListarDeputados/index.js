@@ -1,34 +1,30 @@
 import React, { Component } from 'react';
 
-const API = "/{id}";
+import { Button } from 'antd';
+
+var user = []
 
 class ListarDeputados extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: []
-    };
-  }
 
-  getDataString() {
-    fetch(API)
-      .then(res => res.text()
-        .then(greet => this.setState({ greet })
-        )
-      )
+  getFromAPI() {
+    fetch('/deputados')
+    .then(res => res.json())
+    .then(data => {
+      user = data
+    })
+    console.log(user) 
   }
-
-  componentDidMount() {
-    this.getDataString()      
-  }
+   
 
   render() {
 
-    var obj1 = this.state.greet;    
-
     return (
       <div>
-       {obj1}        
+       
+          <Button>
+            GO BACK HOME
+          </Button>
+
       </div>
     );
   }

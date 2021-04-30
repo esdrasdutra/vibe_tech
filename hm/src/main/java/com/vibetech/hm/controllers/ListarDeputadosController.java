@@ -3,7 +3,6 @@ package com.vibetech.hm.controllers;
 import com.vibetech.hm.interfaces.ListarDeputados;
 
 import com.vibetech.hm.model.Deputados;
-import com.vibetech.hm.model.DeputadosDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
