@@ -6,6 +6,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.vibetech.hm.model_DTO.DadosDTO;
 
 
 
@@ -15,8 +16,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Deputado implements Serializable {
 
     @JsonProperty("dados")
-    private Dados dados;
-    
+    private DadosDTO dados;
+
+        
     @JsonProperty("links")
     private List<Link> links = new ArrayList<Link>();
     private final static long serialVersionUID = -2257509809426723682L;
@@ -35,12 +37,13 @@ public class Deputado implements Serializable {
      */
     public Deputado(Dados dados, List<Link> links) {
         super();
-        this.dados = dados;
+        
+        this.dados = this.dados.toModel(dados);
         this.links = links;
     }
 
     @JsonProperty("dados")
-    public Dados getDados() {
+    public DadosDTO getDados() {
         return dados;
     }
 

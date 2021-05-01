@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
 
-import CustomLayout from './containers/Layout'
-import Routes from './routes'
+import CustomLayout from './containers/Layout';
+import Main from './pages/Main';
+import ListarDeputados from './pages/ListarDeputados';
 
 class App extends Component {
   render(){
     return(
-      <CustomLayout>        
-        <BrowserRouter>
-            <Routes/>
-        </BrowserRouter>
+      <CustomLayout>
+        <Main/>
+        <ListarDeputados/>
       </CustomLayout>
 
     );
